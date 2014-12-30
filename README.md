@@ -1,10 +1,49 @@
 #REST.Nodejs
 
-## Step 1. Make sure node is installed
+## Prereqs
 
-## Step 2. clone this repository (or download)
+-- Make sure node is installed
+-- clone this repository (or download)
+-- from the commandline type:  node ./RESTNode.js
 
-## Step 3. from the commandline type:  node ./RESTNode.js
+## Step 1: Create JSON object with name/value pairs
+
+Also check code for headers and post options
+
+'''
+var jsonObject = JSON.stringify({
+'InvoiceNo':'1',
+'RefNo':'1',
+'Memo':'POS and Version go here',
+'Purchase':'1.00',
+'Frequency':'OneTime',
+'RecordNo':'RecordNumberRequested',
+'EncryptedFormat':'MagneSafe',
+'AccountSource':'Swiped',
+'EncryptedBlock':'2F8248964608156B2B1745287B44CA90A349905F905514ABE3979D7957F13804705684B1C9D5641C',
+'EncryptedKey':'9500030000040C200026',
+'OperatorID':'operatorid'
+});
+'''
+
+## Step 2: Create request object
+
+'''
+var reqPost = https.request(optionspost, function(res) {
+    res.on('data', function(d) {
+        console.info('POST result:\n');
+        process.stdout.write(d);
+        console.info('\n\nPOST completed');
+    });
+});
+'''
+
+## Step 3: Write JSON object to request
+
+'''
+reqPost.write(jsonObject);
+reqPost.end();
+'''
 
 ####©2014 Mercury Payment Systems, LLC - all rights reserved.
 
