@@ -4,7 +4,7 @@
 
 * Make sure node is installed
 * Clone this repository (or download)
-* From the commandline type:  node ./RESTNode.js
+* From the commandline type:  node ./[.js file name]
 
 ## Step 1: Create JSON object with name/value pairs
 
